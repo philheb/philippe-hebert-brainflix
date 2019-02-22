@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+  }
+}
+
+.hero__header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero__header {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  h4 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+}
+
+h5 {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #afafaf;
+}
+
+.App {
+  width: 100%;
+}
+
+body {
+  color: #323232;
+  font-family: AvenirNext, Roboto, Arial, Helvetica, sans-serif;
+}
+
+main {
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+a {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@media only screen and (min-width: 1440px) {
+  .bottom {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bottom__left {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bottom__right {
+    width: 30%;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=App.css.map */

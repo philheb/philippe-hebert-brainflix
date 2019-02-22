@@ -1,0 +1,51 @@
+@import "../../App.scss";
+
+.Comment {
+  margin: 0 16px;
+  @media only screen and (min-width: $break-tablet) {
+    margin: 0 40px 0 16px;
+  }
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  // justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.comments__avatar--new {
+  display: flex;
+  background-color: $text-label-style;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-top: 24px;
+  margin-right: 30px;
+}
+
+.comment__body {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  @media only screen and (min-width: $break-tablet) {
+    min-width: 624px;
+  }
+  .comment__author {
+    @media only screen and (min-width: $break-tablet) {
+      max-width: 100%;
+    }
+  }
+  .comment__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  h4 {
+    margin-right: 0;
+  }
+}

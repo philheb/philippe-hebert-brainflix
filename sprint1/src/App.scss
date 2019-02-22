@@ -1,0 +1,177 @@
+//==================//
+//      RESET       //
+//==================//
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//==================//
+//   BREAKPOINTS    //
+//==================//
+$break-phone: 320px;
+$break-tablet: 768px;
+$break-desktop: 1440px;
+
+//==================//
+//      COLORS      //
+//==================//
+$nav-bg-fill: #323232;
+$primary-cta: #0095ff;
+$primary-cta-hover: #0065ad;
+$paragraph-text: #323232;
+$text-label-style: #afafaf;
+$text-field-border: #e1e1e1;
+$text-field-bg: #fafafa;
+
+//==================//
+//      FONTS       //
+//==================//
+// @font-face {
+//   font-family: AvenirNext;
+//   font-weight: 400;
+//   src: url("/Users/tom/Desktop/project/brainflix-1/src/assets/fonts/AvenirNextLTPro.ttf") format("opentype");
+// }
+
+// @font-face {
+//   font-family: AvenirNext;
+//   font-weight: 700;
+//   src: url("/Users/tom/Desktop/project/brainflix-1/src/assets/fonts/AvenirNextLTProBold.ttf") format("opentype");
+// }
+
+// @font-face {
+//   font-family: AvenirNext;
+//   font-weight: 600;
+//   src: url("/Users/tom/Desktop/project/brainflix-1/src/assets/fonts/AvenirNextLTProDemi.ttf") format("opentype");
+// }
+
+//==================//
+//    VARIABLES     //
+//==================//
+
+$bold: 700;
+$demi-bold: 600;
+$normal: 400;
+
+$h1-mobile: 24px, 32px, $bold;
+$h1-tablet: 36px, 44px, $bold;
+
+$heroHeader-mobile: 24px, 32px, $bold;
+$heroHeader-tablet: 60px, 68px, $bold;
+
+$h2-mobile: 14px, 22px, $demi-bold;
+$h2-tablet: 24px, 32px, $demi-bold;
+
+$h4-mobile: 13px, 18px, $normal;
+$h4-tablet: 14px, 22px, $normal;
+
+$h5: 12px, 20px, $normal;
+
+// SASS MIXINS
+
+@mixin flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin font($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+h1 {
+  @include font($h1-mobile...);
+
+  @media only screen and (min-width: $break-tablet) {
+    @include font($h1-tablet...);
+  }
+}
+
+.hero__header {
+  @include font($heroHeader-mobile...);
+
+  @media only screen and (min-width: $break-tablet) {
+    @include font($heroHeader-tablet...);
+  }
+}
+
+h2 {
+  @include font($h2-mobile...);
+
+  @media only screen and (min-width: $break-tablet) {
+    @include font($h2-tablet...);
+  }
+}
+
+h4 {
+  @include font($h4-mobile...);
+
+  @media only screen and (min-width: $break-tablet) {
+    @include font($h4-tablet...);
+  }
+}
+
+h5 {
+  @include font($h5...);
+  color: $text-label-style;
+}
+
+//===================//
+//  GLOBAL RULESETS  //
+//===================//
+
+.App {
+  width: 100%;
+}
+
+body {
+  color: $paragraph-text;
+  font-family: AvenirNext, Roboto, Arial, Helvetica, sans-serif;
+}
+
+main {
+  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+a {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: $demi-bold;
+  text-decoration: none;
+  color: white;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  @media only screen and (min-width: $break-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+  }
+}
+
+.bottom__left {
+  @media only screen and (min-width: $break-desktop) {
+    width: 70%;
+  }
+}
+.bottom__right {
+  @media only screen and (min-width: $break-desktop) {
+    width: 30%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

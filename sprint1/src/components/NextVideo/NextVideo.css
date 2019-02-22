@@ -1,0 +1,26 @@
+.NextVideo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.nextVideo__video {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 120px;
+  height: 70px;
+  margin-right: 16px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.nextVideo__text {
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
+}
+
+.nextVideo__text .nextVideo__title {
+  margin-bottom: 8px;
+}
+/*# sourceMappingURL=NextVideo.css.map */

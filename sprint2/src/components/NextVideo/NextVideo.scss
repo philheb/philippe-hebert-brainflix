@@ -1,0 +1,32 @@
+@import "../../App.scss";
+
+.NextVideo {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.nextVideo__video {
+  flex-shrink: 0;
+  width: 120px;
+  height: 70px;
+  margin-right: 16px;
+  background-color: #eee;
+  border-radius: 5px;
+  @media only screen and (min-width: $break-tablet) {
+    animation: scale-out 0.1s linear both;
+  }
+}
+
+.nextVideo__video:hover {
+  @media only screen and (min-width: $break-tablet) {
+    animation: scale-in 0.1s linear both;
+    filter: grayscale(0.7);
+  }
+}
+
+.nextVideo__text {
+  flex-shrink: 2;
+  .nextVideo__title {
+    margin-bottom: 8px;
+  }
+}

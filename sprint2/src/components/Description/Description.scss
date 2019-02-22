@@ -1,0 +1,64 @@
+@import "../../App.scss";
+
+.Description {
+  margin: 0 16px 40px 16px;
+  @media only screen and (min-width: $break-tablet) {
+    margin-bottom: 64px;
+  }
+}
+
+.description__sub {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $break-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.like,
+.view {
+  margin-right: 8px;
+}
+
+.like:hover {
+  animation: scale1 0.2s linear both;
+  color: red;
+}
+
+h1 {
+  margin-bottom: 16px;
+  @media only screen and (min-width: $break-tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+h2 {
+  margin-right: 8px;
+}
+
+h4 {
+  margin-right: 24px;
+}
+
+.description__content {
+  margin-top: 24px;
+  @media only screen and (min-width: $break-tablet) {
+    margin-top: 40px;
+  }
+}
+
+@keyframes scale1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
