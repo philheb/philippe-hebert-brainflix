@@ -17,6 +17,7 @@
 
 .comments__avatar--new {
   display: flex;
+  flex-shrink: 0;
   background-color: $text-label-style;
   background-size: cover;
   width: 50px;

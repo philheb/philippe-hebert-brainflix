@@ -149,7 +149,6 @@ a {
 .Video {
   width: 100%;
   height: 183px;
-  min-height: 183px;
   color: white;
   margin-bottom: 32px;
   background-color: black;
@@ -164,14 +163,34 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   .Video {
     height: 540px;
   }
 }
 
 video {
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  background: black;
+  background-size: cover;
+  width: 320px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+@media only screen and (min-width: 768px) {
+  video {
+    width: 700px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  video {
+    width: 944px;
+  }
 }
 
 .control {
@@ -209,6 +228,7 @@ video {
   padding: 5px 10px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
 }
 
 .control__right {
@@ -289,7 +309,7 @@ video {
 
 @-webkit-keyframes color-change-2x {
   0% {
-    background: #323232;
+    background: #656565;
   }
   100% {
     background: black;
@@ -298,7 +318,7 @@ video {
 
 @keyframes color-change-2x {
   0% {
-    background: #323232;
+    background: #656565;
   }
   100% {
     background: black;
