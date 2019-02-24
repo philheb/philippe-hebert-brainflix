@@ -182,6 +182,22 @@ a {
   margin-right: 30px;
 }
 
+@media only screen and (min-width: 768px) {
+  .comments__avatar--new {
+    -webkit-animation: scale-out 0.1s linear both;
+            animation: scale-out 0.1s linear both;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .comments__avatar--new:hover {
+    -webkit-animation: scale-in 0.1s linear both;
+            animation: scale-in 0.1s linear both;
+    -webkit-filter: grayscale(0.7);
+            filter: grayscale(0.7);
+  }
+}
+
 .comment__body {
   width: 80%;
   display: -webkit-box;
@@ -221,5 +237,49 @@ a {
 
 .comment__body h4 {
   margin-right: 0;
+}
+
+@-webkit-keyframes scale-in {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+  }
+}
+
+@-webkit-keyframes scale-out {
+  0% {
+    -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=Comment.css.map */

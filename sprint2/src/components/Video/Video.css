@@ -152,8 +152,8 @@ a {
   color: white;
   margin-bottom: 32px;
   background-color: black;
-  -webkit-animation: color-change-2x 2s linear both;
-          animation: color-change-2x 2s linear both;
+  -webkit-animation: color-change-2x 3s linear both;
+          animation: color-change-2x 3s linear both;
 }
 
 @media only screen and (min-width: 768px) {

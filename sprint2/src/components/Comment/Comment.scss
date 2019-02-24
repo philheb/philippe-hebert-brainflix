@@ -25,6 +25,16 @@
   border-radius: 50px;
   margin-top: 24px;
   margin-right: 30px;
+  @media only screen and (min-width: $break-tablet) {
+    animation: scale-out 0.1s linear both;
+  }
+}
+
+.comments__avatar--new:hover {
+  @media only screen and (min-width: $break-tablet) {
+    animation: scale-in 0.1s linear both;
+    filter: grayscale(0.7);
+  }
 }
 
 .comment__body {
@@ -48,5 +58,23 @@
   }
   h4 {
     margin-right: 0;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
   }
 }
