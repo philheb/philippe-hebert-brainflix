@@ -38,7 +38,7 @@ export default class Video extends Component {
     }
 
     const progressBarStyle = {
-      width: '50%',
+      width: '0%',
     }
 
     const backgroundStyle = {
@@ -54,7 +54,6 @@ export default class Video extends Component {
           style={backgroundStyle}
           poster={require('../../assets/images/transparent.png')}
           height="100%"
-          // width="100%"
         />
         <div className="control">
           <div className="control__left" onClick={this.toggle}>

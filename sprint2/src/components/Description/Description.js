@@ -10,11 +10,6 @@ const description = props => (
         <h5>12/18/2018</h5>
       </div>
       <div className="row">
-        {/* <img
-          src={require('../../assets/icons/Icon-views.svg')}
-          alt="views"
-          className="icon"
-        /> */}
         <i className="material-icons view">remove_red_eye</i>
         <h4>{props.views}</h4>
 

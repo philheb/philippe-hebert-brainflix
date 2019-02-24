@@ -18,7 +18,6 @@ class Main extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params
-    // '/videos/:id'
     if (id !== undefined) {
       axios
         .get(
@@ -33,7 +32,6 @@ class Main extends Component {
         .catch(err => {
           console.log(err)
         })
-      // root '/'
     } else {
       axios
         .get(
