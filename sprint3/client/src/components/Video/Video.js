@@ -50,7 +50,7 @@ export default class Video extends Component {
       <div className="Video">
         <video
           ref={self => (this.myVideo = self)}
-          src={this.props.video}
+          src={this.props.video + '?api_key=philippe'}
           style={backgroundStyle}
           poster={require('../../assets/images/transparent.png')}
           height="100%"

@@ -20,9 +20,7 @@ class Main extends Component {
     const { id } = this.props.match.params
     if (id !== undefined) {
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${id}?api_key=philippe`
-        )
+        .get(`http://localhost:5050/api/videos/${id}`)
         .then(res => {
           this.setState({
             loadedVideo: res.data,
@@ -34,11 +32,7 @@ class Main extends Component {
         })
     } else {
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${
-            this.state.loadedVideoId
-          }?api_key=philippe`
-        )
+        .get(`http://localhost:5050/api/videos/${this.state.loadedVideoId}`)
         .then(res => {
           this.setState({
             loadedVideo: res.data,
@@ -53,7 +47,7 @@ class Main extends Component {
 
   handleNextVideo = id => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=philippe`)
+      .get(`http://localhost:5050/api/videos/${id}`)
       .then(res => {
         this.setState({
           loadedVideo: res.data,
@@ -75,18 +69,14 @@ class Main extends Component {
     }
     axios
       .post(
-        `https://project-2-api.herokuapp.com/videos/${
+        `http://localhost:5050/api/videos/${
           this.state.loadedVideo.id
-        }/comments?api_key=philippe`,
+        }/comments`,
         newComment
       )
       .then(res => {
         axios
-          .get(
-            `https://project-2-api.herokuapp.com/videos/${
-              this.state.loadedVideo.id
-            }?api_key=philippe`
-          )
+          .get(`http://localhost:5050/api/videos/${this.state.loadedVideo.id}`)
           .then(res => {
             this.setState({
               loadedVideo: res.data,
@@ -112,7 +102,7 @@ class Main extends Component {
       return (
         <div className="Main">
           <Video
-            video={this.state.loadedVideo.video + '?api_key=philippe'}
+            video={this.state.loadedVideo.video}
             image={this.state.loadedVideo.image}
             reload={this.state.reloadVideo}
           />

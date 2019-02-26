@@ -5,7 +5,7 @@
   color: white;
   margin-bottom: 32px;
   background-color: black;
-  animation: color-change-2x 3s linear /*infinite alternate*/ both;
+  animation: color-change-2x 4s linear /*infinite alternate*/ both;
   @media only screen and (min-width: $break-tablet) {
     height: 400px;
     margin-bottom: 48px;
@@ -107,11 +107,20 @@ video {
   border-radius: 5px;
 }
 
+// @keyframes color-change-2x {
+//   0% {
+//     background-color: rgba(0, 0, 0, 0.5);
+//   }
+//   100% {
+//     background-color: rgba(0, 0, 0, 1);
+//   }
+// }
+
 @keyframes color-change-2x {
   0% {
-    background: #656565;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   100% {
-    background: black;
+    background-color: rgba(0, 0, 0, 1);
   }
 }

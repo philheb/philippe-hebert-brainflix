@@ -152,8 +152,8 @@ a {
   color: white;
   margin-bottom: 32px;
   background-color: black;
-  -webkit-animation: color-change-2x 3s linear both;
-          animation: color-change-2x 3s linear both;
+  -webkit-animation: color-change-2x 4s linear both;
+          animation: color-change-2x 4s linear both;
 }
 
 @media only screen and (min-width: 768px) {
@@ -309,19 +309,19 @@ video {
 
 @-webkit-keyframes color-change-2x {
   0% {
-    background: #656565;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   100% {
-    background: black;
+    background-color: black;
   }
 }
 
 @keyframes color-change-2x {
   0% {
-    background: #656565;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   100% {
-    background: black;
+    background-color: black;
   }
 }
 /*# sourceMappingURL=Video.css.map */

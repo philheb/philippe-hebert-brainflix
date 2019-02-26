@@ -1,7 +1,21 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import './Upload.scss'
 
 export default class Upload extends Component {
+  state = {
+    title: '',
+    description: '',
+  }
+
+  handleSubmit = () => {
+    const newVideo = {
+      title: this.state.title,
+    }
+    axios.post(`http://localhost:5050/api/videos/`, newVideo)
+    this.props.history.push('/')
+  }
+
   render() {
     return (
       <>
@@ -29,6 +43,10 @@ export default class Upload extends Component {
                   type="text"
                   name="title"
                   placeholder="Add a title to your video"
+                  value={this.state.title}
+                  onChange={event =>
+                    this.setState({ title: event.target.value })
+                  }
                 />
               </div>
               <div className="upload__description">
@@ -39,6 +57,10 @@ export default class Upload extends Component {
                   name="title"
                   placeholder="Add a description to your video"
                   height="143px"
+                  value={this.state.description}
+                  onChange={event =>
+                    this.setState({ description: event.target.value })
+                  }
                 />
               </div>
             </div>
@@ -46,7 +68,9 @@ export default class Upload extends Component {
 
           <hr className="dark-hr" />
           <div className="actions">
-            <button className="btn btn-publish">PUBLISH</button>
+            <button className="btn btn-publish" onClick={this.handleSubmit}>
+              PUBLISH
+            </button>
             <button className="btn-cancel">CANCEL</button>
           </div>
         </div>

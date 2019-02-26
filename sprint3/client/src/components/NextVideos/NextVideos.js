@@ -12,7 +12,7 @@ class NextVideos extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos?api_key=philippe`)
+      .get(`http://localhost:5050/api/videos/`)
       .then(res => {
         this.setState({
           videos: res.data,
