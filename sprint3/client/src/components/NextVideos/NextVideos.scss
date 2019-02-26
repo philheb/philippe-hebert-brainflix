@@ -1,0 +1,29 @@
+@import "../../App.scss";
+
+.NextVideos {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 16px 20px 16px;
+  @media only screen and (min-width: $break-tablet) {
+    max-width: 50%;
+    h2 {
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+    h5 {
+      line-height: 1em;
+    }
+  }
+  @media only screen and (min-width: $break-desktop) {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.nextVideos__title {
+  margin-bottom: 40px;
+}
+
+.nextVideos__list {
+  width: 100%;
+}
