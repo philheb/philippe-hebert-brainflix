@@ -54,6 +54,8 @@ class Main extends Component {
           isLoaded: true,
           reloadVideo: true,
         })
+      })
+      .then(res => {
         window.scrollTo(0, 0)
         this.setState({ reloadVideo: false })
       })
@@ -111,6 +113,7 @@ class Main extends Component {
               <Description
                 title={this.state.loadedVideo.title}
                 channel={this.state.loadedVideo.channel}
+                date={this.state.loadedVideo.timestamp}
                 views={this.state.loadedVideo.views}
                 likes={this.state.loadedVideo.likes}
                 description={this.state.loadedVideo.description}
