@@ -37,8 +37,15 @@ video {
   margin: 0 16px;
   position: relative;
   bottom: 45px;
+  max-width: 320px;
+  margin: auto;
   @media only screen and (min-width: $break-tablet) {
     max-width: 700px;
+    margin: auto;
+    bottom: 50px;
+  }
+  @media only screen and (min-width: $break-desktop) {
+    max-width: 944px;
     margin: auto;
     bottom: 50px;
   }
@@ -59,6 +66,9 @@ video {
 .control__right {
   flex-basis: 15%;
   justify-content: space-around;
+  @media only screen and (min-width: $break-desktop) {
+    flex-basis: 8%;
+  }
 }
 
 .control__center {
@@ -68,10 +78,16 @@ video {
   @media only screen and (min-width: $break-tablet) {
     flex-basis: 70%;
   }
+  @media only screen and (min-width: $break-desktop) {
+    flex-basis: 80%;
+  }
 }
 
 .control__left {
   flex-basis: 8%;
+  @media only screen and (min-width: $break-desktop) {
+    flex-basis: 4%;
+  }
 }
 
 .time {
@@ -95,16 +111,27 @@ video {
 }
 
 .bar-border {
+  display: flex;
+  align-items: center;
   width: 70%;
-  height: 10px;
+  height: 6px;
   background-color: black;
   border-radius: 5px;
 }
 
 .bar-bar {
-  height: 10px;
+  height: 6px;
+  background-color: $primary-cta;
+  border-radius: 5px 0 0 5px;
+  margin-right: -10px;
+}
+
+.bar-ball {
+  bottom: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
   background-color: white;
-  border-radius: 5px;
 }
 
 // @keyframes color-change-2x {

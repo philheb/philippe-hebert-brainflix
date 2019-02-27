@@ -5,7 +5,7 @@ export default class Video extends Component {
   state = {
     playing: false,
     icon: 'play_arrow',
-    percentage: '',
+    percentage: 0,
     currTime: '0:00',
   }
 
@@ -34,12 +34,12 @@ export default class Video extends Component {
   }
 
   handleTimeUpdate = event => {
-    const percentage = Math.floor(
+    const newPercentage = Math.floor(
       (100 / event.target.duration) * event.target.currentTime
     )
-    this.setState({ percentage: percentage })
+    this.setState({ percentage: newPercentage })
 
-    const seconds = Math.ceil(percentage / 10)
+    const seconds = Math.ceil(newPercentage / 10)
 
     if (seconds < 10) {
       this.setState({ currTime: '0:0' + seconds })
@@ -59,7 +59,7 @@ export default class Video extends Component {
     }
 
     const progressBarStyle = {
-      width: this.state.percentage,
+      width: this.state.percentage + '%',
     }
 
     const backgroundStyle = {
@@ -85,6 +85,7 @@ export default class Video extends Component {
             <div className="progress">
               <div className="bar-border">
                 <div id="bar" className="bar-bar" style={progressBarStyle} />
+                <div className="bar-ball">{}</div>
               </div>
               <div className="time">
                 <p>{`${this.state.currTime}/0:10`}</p>{' '}

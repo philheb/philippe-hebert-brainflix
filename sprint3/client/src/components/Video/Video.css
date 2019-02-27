@@ -205,11 +205,21 @@ video {
   margin: 0 16px;
   position: relative;
   bottom: 45px;
+  max-width: 320px;
+  margin: auto;
 }
 
 @media only screen and (min-width: 768px) {
   .control {
     max-width: 700px;
+    margin: auto;
+    bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .control {
+    max-width: 944px;
     margin: auto;
     bottom: 50px;
   }
@@ -238,6 +248,13 @@ video {
       justify-content: space-around;
 }
 
+@media only screen and (min-width: 1440px) {
+  .control__right {
+    -ms-flex-preferred-size: 8%;
+        flex-basis: 8%;
+  }
+}
+
 .control__center {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
@@ -251,9 +268,23 @@ video {
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .control__center {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+}
+
 .control__left {
   -ms-flex-preferred-size: 8%;
       flex-basis: 8%;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control__left {
+    -ms-flex-preferred-size: 4%;
+        flex-basis: 4%;
+  }
 }
 
 .time {
@@ -295,16 +326,31 @@ video {
 }
 
 .bar-border {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 70%;
-  height: 10px;
+  height: 6px;
   background-color: black;
   border-radius: 5px;
 }
 
 .bar-bar {
-  height: 10px;
+  height: 6px;
+  background-color: #0095ff;
+  border-radius: 5px 0 0 5px;
+  margin-right: -10px;
+}
+
+.bar-ball {
+  bottom: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
   background-color: white;
-  border-radius: 5px;
 }
 
 @-webkit-keyframes color-change-2x {
