@@ -10,7 +10,7 @@ const pattern = 'a0'
 // #Route   GET api/videos/test
 // #Desc    Tests posts route
 router.get('/test', (req, res) => {
-  res.send('Bonjour à tous!')
+  res.send('Bonjour!')
 })
 
 // #Route   GET api/videos/
