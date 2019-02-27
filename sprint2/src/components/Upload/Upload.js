@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Upload.scss'
 
 export default class Upload extends Component {
@@ -45,10 +46,11 @@ export default class Upload extends Component {
           </div>
 
           <hr className="dark-hr" />
-          <div className="actions">
+
+          <Link to="/" className="actions">
             <button className="btn btn-publish">PUBLISH</button>
             <button className="btn-cancel">CANCEL</button>
-          </div>
+          </Link>
         </div>
       </>
     )

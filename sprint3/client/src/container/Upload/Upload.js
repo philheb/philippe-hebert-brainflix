@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './Upload.scss'
+import { Link } from 'react-router-dom'
 
 export default class Upload extends Component {
   state = {
@@ -77,7 +78,9 @@ export default class Upload extends Component {
             <button className="btn btn-publish" onClick={this.handleSubmit}>
               PUBLISH
             </button>
-            <button className="btn-cancel">CANCEL</button>
+            <Link to="/">
+              <button className="btn-cancel">CANCEL</button>
+            </Link>
           </div>
         </div>
       </>

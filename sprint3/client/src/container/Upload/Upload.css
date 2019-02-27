@@ -277,7 +277,9 @@ a {
 }
 
 .btn-cancel {
-  margin-top: 24px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 32px;
   margin-right: 2px;
   width: 100%;
   background-color: white;
