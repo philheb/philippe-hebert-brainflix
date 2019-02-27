@@ -5,13 +5,15 @@ export default class Video extends Component {
   state = {
     playing: false,
     icon: 'play_arrow',
+    percentage: '',
+    currTime: '0:00',
   }
 
   componentDidMount() {
     this.setState({ icon: 'play_arrow' })
   }
 
-  toggle = () => {
+  handleToggle = () => {
     if (this.state.playing === false) {
       this.myVideo.play()
       this.setState({
@@ -27,6 +29,25 @@ export default class Video extends Component {
     }
   }
 
+  handleFullScreen = () => {
+    this.myVideo.requestFullscreen()
+  }
+
+  handleTimeUpdate = event => {
+    const percentage = Math.floor(
+      (100 / event.target.duration) * event.target.currentTime
+    )
+    this.setState({ percentage: percentage })
+
+    const seconds = Math.ceil(percentage / 10)
+
+    if (seconds < 10) {
+      this.setState({ currTime: '0:0' + seconds })
+    } else {
+      this.setState({ currTime: '0:' + seconds })
+    }
+  }
+
   render() {
     if (this.props.reload) {
       this.myVideo.pause()
@@ -38,7 +59,7 @@ export default class Video extends Component {
     }
 
     const progressBarStyle = {
-      width: '0%',
+      width: this.state.percentage,
     }
 
     const backgroundStyle = {
@@ -54,9 +75,10 @@ export default class Video extends Component {
           style={backgroundStyle}
           poster={require('../../assets/images/transparent.png')}
           height="100%"
+          onTimeUpdate={this.handleTimeUpdate}
         />
         <div className="control">
-          <div className="control__left" onClick={this.toggle}>
+          <div className="control__left" onClick={this.handleToggle}>
             <i className="material-icons">{this.state.icon}</i>
           </div>
           <div className="control__center">
@@ -65,12 +87,15 @@ export default class Video extends Component {
                 <div id="bar" className="bar-bar" style={progressBarStyle} />
               </div>
               <div className="time">
-                <p>0:00/0:42</p>
+                <p>{`${this.state.currTime}/0:10`}</p>{' '}
+                {/* The video coming from the API is always 10 sec */}
               </div>
             </div>
           </div>
           <div className="control__right">
-            <i className="material-icons">fullscreen</i>
+            <i className="material-icons" onClick={this.handleFullScreen}>
+              fullscreen
+            </i>
             <i className="material-icons">volume_up</i>
           </div>
         </div>
