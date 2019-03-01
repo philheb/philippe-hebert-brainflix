@@ -79,7 +79,7 @@ class Main extends Component {
   handleNewComment = comment => {
     const newComment = {
       comment: comment,
-      name: 'John Smith',
+      name: 'Philippe Hebert',
     }
     axios
       .post(

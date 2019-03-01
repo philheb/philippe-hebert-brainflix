@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   res.send(require(`../data/${id}.json`))
 })
 
-// #Route   POST videos
+// #Route   POST videos/
 // #Desc    Upload a new video
 router.post('/', (req, res) => {
   const id = randomId(len, pattern)
@@ -60,6 +60,25 @@ router.post('/', (req, res) => {
     success: true,
     data: req.body,
   })
+})
+
+// #Route   POST /videos/:id/comments
+// #Desc    Add a new comment
+router.post('/:id/comments', (req, res) => {
+  const id = randomId(len, pattern)
+  const videoId = req.params.id
+  const comment = req.body.comment
+  const channel = req.body.name
+  const video = require(`../data/${videoId}.json`)
+  const newComment = {
+    name: channel,
+    comment: comment,
+    id: id,
+    likes: 0,
+    timestamp: new Date().getTime(),
+  }
+  video.comments.push(newComment)
+  res.status(200).send(video)
 })
 
 // #Route   PUT videos/:videoId/likes
