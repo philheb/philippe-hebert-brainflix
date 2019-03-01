@@ -21,7 +21,12 @@ class Description extends Component {
             <i className="material-icons view">remove_red_eye</i>
             <h4>{this.props.views}</h4>
 
-            <i className="material-icons like">favorite</i>
+            <i
+              className="material-icons like"
+              onClick={() => this.props.handleLikes(this.props.videoId)}
+            >
+              favorite
+            </i>
             <h4>{this.props.likes}</h4>
           </div>
         </div>

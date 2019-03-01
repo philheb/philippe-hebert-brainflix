@@ -10,16 +10,11 @@ export default class Upload extends Component {
   }
 
   handleSubmit = () => {
-    const header = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
     const newVideo = {
       title: this.state.title,
       description: this.state.description,
     }
-    axios.post(`http://localhost:5050/api/videos/`, newVideo, header)
+    axios.post(`http://localhost:5050/videos/`, newVideo)
     this.props.history.push('/')
   }
 

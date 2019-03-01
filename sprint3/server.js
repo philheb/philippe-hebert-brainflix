@@ -3,11 +3,11 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const app = express()
-const port = process.env.PORT || 5050
-const videos = require('./routes/api/videos')
+const videoRoute = require('./routes/videos')
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/api/videos', videos)
+app.use('/videos', videoRoute)
 
+const port = process.env.PORT || 5050
 app.listen(port, () => console.log(`Server is listening on port ${port}`))

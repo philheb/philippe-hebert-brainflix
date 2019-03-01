@@ -43,6 +43,8 @@ export default class Video extends Component {
 
     if (seconds < 10) {
       this.setState({ currTime: '0:0' + seconds })
+    } else if (isNaN(seconds)) {
+      this.setState({ currTime: '0:00' })
     } else {
       this.setState({ currTime: '0:' + seconds })
     }
@@ -56,6 +58,8 @@ export default class Video extends Component {
       this.state.icon = 'play_arrow'
       // eslint-disable-next-line
       this.state.playing = false
+      // eslint-disable-next-line
+      this.state.percentage = 0
     }
 
     const progressBarStyle = {
@@ -88,8 +92,7 @@ export default class Video extends Component {
                 <div className="bar-ball">{}</div>
               </div>
               <div className="time">
-                <p>{`${this.state.currTime}/0:10`}</p>{' '}
-                {/* The video coming from the API is always 10 sec */}
+                <p>{`${this.state.currTime}/0:10`}</p>
               </div>
             </div>
           </div>

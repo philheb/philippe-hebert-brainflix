@@ -5,7 +5,7 @@
   "image": "https://i.imgur.com/7rD6Mf6.jpg",
   "description": "Your loved one has been dreaming about a romantic getaway with you, if you want to bring the spark back into your relationship this is the place to go! Small and design-forward, boutique hotels promise a more intimate vacation stay, each one chock-full of character while offering plenty of inimitable features (from exposed brick to panoramic ocean views)",
   "views": "345,987",
-  "likes": "76,588",
+  "likes": 76588,
   "duration": "12:26",
   "video": "https://project-2-api.herokuapp.com/stream",
   "timestamp": 1545377524000,

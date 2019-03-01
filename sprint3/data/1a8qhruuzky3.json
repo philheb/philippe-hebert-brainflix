@@ -5,7 +5,7 @@
   "image": "https://i.imgur.com/i6S8m7I.jpg",
   "description": "Traveling by train can be convenient, enjoyable and economical. You can minimize your risk of injury, illness, and theft by taking a few simple precautions. Before you travel, you should pack only the necessities. This will make your luggage easy to carry and store during your travels. You should always assume that the tap water on the train is not potable. Whenever it is possible, stock up on bottles of water to reduce the risk of dehydration. Remember, never accept food or drinks from strangers!",
   "views": "3,092,284",
-  "likes": "75,985",
+  "likes": 75985,
   "duration": "4:20",
   "video": "https://project-2-api.herokuapp.com/stream",
   "timestamp": 1531007012000,

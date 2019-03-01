@@ -12,7 +12,7 @@ class NextVideos extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5050/api/videos/`)
+      .get(`http://localhost:5050/videos/`)
       .then(res => {
         this.setState({
           videos: res.data,

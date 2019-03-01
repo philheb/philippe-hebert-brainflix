@@ -20,7 +20,7 @@ class Main extends Component {
     const { id } = this.props.match.params
     if (id !== undefined) {
       axios
-        .get(`http://localhost:5050/api/videos/${id}`)
+        .get(`http://localhost:5050/videos/${id}`)
         .then(res => {
           this.setState({
             loadedVideo: res.data,
@@ -32,7 +32,7 @@ class Main extends Component {
         })
     } else {
       axios
-        .get(`http://localhost:5050/api/videos/${this.state.loadedVideoId}`)
+        .get(`http://localhost:5050/videos/${this.state.loadedVideoId}`)
         .then(res => {
           this.setState({
             loadedVideo: res.data,
@@ -47,7 +47,7 @@ class Main extends Component {
 
   handleNextVideo = id => {
     axios
-      .get(`http://localhost:5050/api/videos/${id}`)
+      .get(`http://localhost:5050/videos/${id}`)
       .then(res => {
         this.setState({
           loadedVideo: res.data,
@@ -71,14 +71,12 @@ class Main extends Component {
     }
     axios
       .post(
-        `http://localhost:5050/api/videos/${
-          this.state.loadedVideo.id
-        }/comments`,
+        `http://localhost:5050/videos/${this.state.loadedVideo.id}/comments`,
         newComment
       )
       .then(res => {
         axios
-          .get(`http://localhost:5050/api/videos/${this.state.loadedVideo.id}`)
+          .get(`http://localhost:5050/videos/${this.state.loadedVideo.id}`)
           .then(res => {
             this.setState({
               loadedVideo: res.data,
@@ -91,6 +89,14 @@ class Main extends Component {
           })
       })
       .catch(err => console.log(err))
+  }
+
+  handleLikes = id => {
+    axios.put(`http://localhost:5050/videos/${id}/likes`, id).then(res => {
+      this.setState({
+        loadedVideo: res.data,
+      })
+    })
   }
 
   render() {
@@ -111,12 +117,14 @@ class Main extends Component {
           <div className="bottom">
             <div className="bottom__left">
               <Description
+                videoId={this.state.loadedVideo.id}
                 title={this.state.loadedVideo.title}
                 channel={this.state.loadedVideo.channel}
                 date={this.state.loadedVideo.timestamp}
                 views={this.state.loadedVideo.views}
                 likes={this.state.loadedVideo.likes}
                 description={this.state.loadedVideo.description}
+                handleLikes={this.handleLikes}
               />
               <CommentForm
                 numComments={this.state.loadedVideo.comments.length}

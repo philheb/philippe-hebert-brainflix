@@ -2,31 +2,25 @@ const express = require('express')
 const router = express.Router()
 const randomId = require('random-id')
 const fs = require('fs')
-const videoList = require('../../data/videoList.json')
+const videoList = require('../data/videoList.json')
 
 const len = 12
 const pattern = 'a0'
 
-// #Route   GET api/videos/test
-// #Desc    Tests posts route
-router.get('/test', (req, res) => {
-  res.send('Bonjour!')
-})
-
-// #Route   GET api/videos/
+// #Route   GET videos/
 // #Desc    Get all videos (for thumbnail)
 router.get('/', (req, res) => {
   res.send(videoList)
 })
 
-// #Route   GET api/videos/:id
+// #Route   GET videos/:id
 // #Desc    Get a specific video by id
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  res.send(require(`../../data/${id}.json`))
+  res.send(require(`../data/${id}.json`))
 })
 
-// #Route   POST api/videos
+// #Route   POST videos
 // #Desc    Upload a new video
 router.post('/', (req, res) => {
   const id = randomId(len, pattern)
@@ -66,7 +60,20 @@ router.post('/', (req, res) => {
     success: true,
     data: req.body,
   })
-  res.sendStatus(200)
+})
+
+// #Route   PUT videos/:videoId/likes
+// #Desc    Increments the like count
+router.put('/:id/likes', (req, res) => {
+  const id = req.params.id
+  const video = require(`../data/${id}.json`)
+  video.likes += 1
+  fs.writeFileSync(
+    `./data/${id}.json`,
+    JSON.stringify(require(`../data/${id}.json`))
+  )
+  // res.send(require(`../data/${id}.json`).likes)
+  res.json(video)
 })
 
 module.exports = router
