@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Main from './container/Main/Main'
 import Upload from './components/Upload/Upload'
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -12,9 +12,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <Route exact path="/" component={Main} />
-          <Route exact path="/upload" component={Upload} />
-          <Route exact path="/videos/:id" component={Main} />
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route exact path="/upload" component={Upload} />
+            <Route exact path="/videos/:id" component={Main} />
+          </Switch>
         </div>
       </Router>
     )

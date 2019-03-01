@@ -2,7 +2,7 @@ import React from 'react'
 import './NextVideo.scss'
 import { Link } from 'react-router-dom'
 
-const nextVideo = props => (
+const NextVideo = props => (
   <div className="NextVideo">
     <Link to={'/videos/' + props.id}>
       <div
@@ -21,4 +21,4 @@ const nextVideo = props => (
     </div>
   </div>
 )
-export default nextVideo
+export default NextVideo

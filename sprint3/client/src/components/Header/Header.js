@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
 
-const header = () => (
+const Header = () => (
   <div className="Header swing-in-top-fwd">
     <div className="logo">
       <Link className="navbar-brand" to="/">
@@ -29,4 +29,4 @@ const header = () => (
   </div>
 )
 
-export default header
+export default Header

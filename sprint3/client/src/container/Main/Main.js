@@ -14,6 +14,7 @@ class Main extends Component {
     loadedVideo: null,
     isLoaded: false,
     reloadVideo: false,
+    thumbnails: [],
   }
 
   componentDidMount() {
@@ -43,6 +44,17 @@ class Main extends Component {
           console.log(err)
         })
     }
+    axios
+      .get(`http://localhost:5050/videos/`)
+      .then(res => {
+        this.setState({
+          thumbnails: res.data,
+          isLoaded: true,
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   handleNextVideo = id => {
@@ -138,6 +150,7 @@ class Main extends Component {
             </div>
             <div className="bottom__right">
               <NextVideos
+                thumbnails={this.state.thumbnails}
                 loadedVideo={this.state.loadedVideo}
                 change={this.handleNextVideo}
               />
