@@ -144,6 +144,14 @@ a {
   color: white;
 }
 
+i {
+  color: $text-label-style;
+}
+
+.btn {
+  cursor: pointer;
+}
+
 .bottom {
   display: flex;
   flex-direction: column;

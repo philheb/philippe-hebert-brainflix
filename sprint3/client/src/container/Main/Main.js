@@ -111,11 +111,18 @@ class Main extends Component {
   }
 
   handleLikeComment = (commentId, videoId) => {
-    console.log(`${videoId} / ${commentId}`)
+    axios
+      .put(
+        `http://localhost:5050/videos/${videoId}/comments/${commentId}/likes`
+      )
+      .then(res => {
+        this.setState({
+          loadedVideo: res.data,
+        })
+      })
   }
 
   handleDeleteComment = (commentId, videoId) => {
-    console.log(`${videoId} / ${commentId}`)
     axios
       .delete(`http://localhost:5050/videos/${videoId}/comments/${commentId}`)
       .then(res => {

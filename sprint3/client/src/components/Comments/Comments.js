@@ -9,7 +9,7 @@ const Comments = props => {
         key={comment.id}
         name={comment.name}
         comment={comment.comment}
-        date={comment.date}
+        date={comment.timestamp}
         likes={comment.likes}
         likeComment={() => props.likeComment(comment.id, props.videoId)}
         deleteComment={() => props.deleteComment(comment.id, props.videoId)}

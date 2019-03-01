@@ -99,24 +99,34 @@ router.delete('/:videoId/comments/:commentId', (req, res) => {
 
   fs.writeFileSync(`./data/${videoId}.json`, JSON.stringify(video))
 
-  res.send(video)
-})
-
-// #Route   PUT videos/:videoId/likes
-// #Desc    Add a like
-router.put('/:id/likes', (req, res) => {
-  const id = req.params.id
-  const video = require(`../data/${id}.json`)
-  video.likes += 1
-  fs.writeFileSync(
-    `./data/${id}.json`,
-    JSON.stringify(require(`../data/${id}.json`))
-  )
-  // res.send(require(`../data/${id}.json`).likes)
   res.json(video)
 })
 
 // #Route   PUT videos/:videoId/likes
 // #Desc    Add a like
+router.put('/:videoId/likes', (req, res) => {
+  const videoId = req.params.videoId
+  const video = require(`../data/${videoId}.json`)
+  video.likes += 1
+  fs.writeFileSync(
+    `./data/${videoId}.json`,
+    JSON.stringify(require(`../data/${videoId}.json`))
+  )
+  res.json(video)
+})
+
+// #Route   PUT videos/:videoId/:commentId/likes
+// #Desc    Add a like to a comment
+router.put('/:videoId/comments/:commentId/likes', (req, res) => {
+  const { commentId, videoId } = req.params
+  const video = require(`../data/${videoId}.json`)
+  const comments = video.comments
+  const commentIds = comments.map(comment => comment.id)
+  const commentIndex = commentIds.indexOf(commentId)
+
+  comments[commentIndex].likes += 1
+  console.log(comments[commentIndex].likes)
+  res.json(video)
+})
 
 module.exports = router

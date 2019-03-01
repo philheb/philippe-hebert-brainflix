@@ -51,7 +51,7 @@
   }
   .comment__header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
   }
@@ -64,10 +64,12 @@
 .comment__icons {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .trash:hover {
   animation: vibrate-1 0.3s linear infinite both;
+  color: red;
 }
 
 @keyframes scale-in {

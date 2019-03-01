@@ -90,6 +90,14 @@ a {
   color: white;
 }
 
+i {
+  color: #afafaf;
+}
+
+.btn {
+  cursor: pointer;
+}
+
 .bottom {
   display: -webkit-box;
   display: -ms-flexbox;

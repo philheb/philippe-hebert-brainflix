@@ -22,13 +22,17 @@
   margin-bottom: 24px;
 }
 
+.like {
+  cursor: pointer;
+}
+
 .like,
 .view {
   margin-right: 8px;
 }
 
 .like:hover {
-  animation: scale1 0.2s linear both;
+  animation: scale1 0.1s linear both;
   color: red;
 }
 
@@ -43,7 +47,7 @@ h2 {
   margin-right: 8px;
 }
 
-h4 {
+.Description h4 {
   margin-right: 24px;
 }
 
