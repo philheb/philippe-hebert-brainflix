@@ -1,1 +1,13 @@
-{"id":"3lut9vonskyi","title":" Sriracha vaporware enamel ","channel":"John Smith","image":"https://i.imgur.com/z5R1zgx.jpg","description":"Waistcoat hammock semiotics fashion axe schlitz, mustache intelligentsia typewriter you probably haven't heard of them farm-to-table. Normcore af ethical, lo-fi ramps keffiyeh cliche. Yuccie beard banh mi +1 keytar godard before they sold out coloring book kombucha kogi meggings church-key cliche. Hell of +1 shabby chic literally, meh banh mi chillwave marfa brooklyn locavore organic try-hard vexillologist man bun. ","views":"0","likes":5,"duration":"1:23","video":"https://project-2-api.herokuapp.com/stream","timestamp":1551382277980,"comments":[]}
+{
+  "id": "3lut9vonskyi",
+  "title": " Sriracha vaporware enamel ",
+  "channel": "John Smith",
+  "image": "https://i.imgur.com/z5R1zgx.jpg",
+  "description": "Waistcoat hammock semiotics fashion axe schlitz, mustache intelligentsia typewriter you probably haven't heard of them farm-to-table. Normcore af ethical, lo-fi ramps keffiyeh cliche. Yuccie beard banh mi +1 keytar godard before they sold out coloring book kombucha kogi meggings church-key cliche. Hell of +1 shabby chic literally, meh banh mi chillwave marfa brooklyn locavore organic try-hard vexillologist man bun. ",
+  "views": "0",
+  "likes": 5,
+  "duration": "1:23",
+  "video": "https://project-2-api.herokuapp.com/stream",
+  "timestamp": 1551382277980,
+  "comments": []
+}

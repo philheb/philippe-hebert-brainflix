@@ -94,7 +94,6 @@ class Main extends Component {
               loadedVideo: res.data,
               isLoaded: true,
             })
-            console.log(this.state.loadedVideo)
           })
           .catch(err => {
             console.log(err)
@@ -109,6 +108,21 @@ class Main extends Component {
         loadedVideo: res.data,
       })
     })
+  }
+
+  handleLikeComment = (commentId, videoId) => {
+    console.log(`${videoId} / ${commentId}`)
+  }
+
+  handleDeleteComment = (commentId, videoId) => {
+    console.log(`${videoId} / ${commentId}`)
+    axios
+      .delete(`http://localhost:5050/videos/${videoId}/comments/${commentId}`)
+      .then(res => {
+        this.setState({
+          loadedVideo: res.data,
+        })
+      })
   }
 
   render() {
@@ -146,6 +160,8 @@ class Main extends Component {
               <Comments
                 comments={this.state.loadedVideo.comments}
                 videoId={this.state.loadedVideo.id}
+                likeComment={this.handleLikeComment}
+                deleteComment={this.handleDeleteComment}
               />
             </div>
             <div className="bottom__right">

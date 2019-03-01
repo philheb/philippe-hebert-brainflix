@@ -10,9 +10,14 @@ const comment = props => (
           <h2 className="comment__author">{props.name}</h2>
           <h4 className="comment__date">{props.date}</h4>
         </div>
-        <h4>{props.comment}</h4>
-        <div className="icon-right">
-          <i className="fas fa-trash-alt" />
+        <h4 className="comment__comment">{props.comment}</h4>
+        <div className="comment__icons">
+          <i className="material-icons like" onClick={props.likeComment}>
+            favorite
+          </i>
+          <i className="material-icons trash" onClick={props.deleteComment}>
+            delete
+          </i>
         </div>
       </div>
     </div>
