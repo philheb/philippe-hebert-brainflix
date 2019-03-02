@@ -12,6 +12,12 @@
   margin-bottom: 32px;
 }
 
+.upload__thumbnail {
+  @media only screen and (min-width: $break-tablet) {
+    margin-bottom: 40px;
+  }
+}
+
 .upload__body {
   @media only screen and (min-width: $break-desktop) {
     display: flex;
@@ -81,9 +87,13 @@
 .upload__description--input {
   height: 143px;
   font-family: AvenirNext, Roboto, Arial;
+  @media only screen and (min-width: $break-tablet) {
+    margin-bottom: 40px;
+  }
   @media only screen and (min-width: $break-desktop) {
-    height: 94px;
     display: block;
+    height: 94px;
+    margin-bottom: 0;
   }
 }
 
@@ -91,6 +101,9 @@
   margin-top: 32px;
   outline: none;
   z-index: 500;
+  @media only screen and (min-width: $break-tablet) {
+    margin-top: 0px;
+  }
 }
 
 .btn-cancel {
@@ -111,6 +124,7 @@
     align-self: flex-end;
     height: 59px;
     flex-shrink: 0;
+    margin-top: 0px;
   }
 }
 .btn-cancel:hover {

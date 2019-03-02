@@ -24,7 +24,7 @@ export default class Upload extends Component {
         <hr className="light-hr" />
         <div className="Upload">
           <h1 className="upload__header">Upload Video</h1>
-          <hr className="upload-hr" />
+          <hr className="upload__hr" />
 
           <div className="upload__body">
             <div className="upload__body--left">
@@ -68,7 +68,7 @@ export default class Upload extends Component {
             </div>
           </div>
 
-          <hr className="dark-hr" />
+          <hr className="upload__hr" />
           <div className="actions">
             <button className="btn btn-publish" onClick={this.handleSubmit}>
               PUBLISH

@@ -169,6 +169,12 @@ i {
   margin-bottom: 32px;
 }
 
+@media only screen and (min-width: 768px) {
+  .upload__thumbnail {
+    margin-bottom: 40px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .upload__body {
     display: -webkit-box;
@@ -271,10 +277,17 @@ i {
   font-family: AvenirNext, Roboto, Arial;
 }
 
+@media only screen and (min-width: 768px) {
+  .upload__description--input {
+    margin-bottom: 40px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .upload__description--input {
-    height: 94px;
     display: block;
+    height: 94px;
+    margin-bottom: 0;
   }
 }
 
@@ -282,6 +295,12 @@ i {
   margin-top: 32px;
   outline: none;
   z-index: 500;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-publish {
+    margin-top: 0px;
+  }
 }
 
 .btn-cancel {
@@ -308,6 +327,7 @@ i {
     height: 59px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
+    margin-top: 0px;
   }
 }
 

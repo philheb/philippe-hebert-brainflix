@@ -94,6 +94,11 @@ i {
   color: #afafaf;
 }
 
+input,
+textarea {
+  background-color: #fafafa;
+}
+
 .btn {
   cursor: pointer;
 }

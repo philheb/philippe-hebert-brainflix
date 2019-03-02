@@ -148,6 +148,11 @@ i {
   color: $text-label-style;
 }
 
+input,
+textarea {
+  background-color: #fafafa;
+}
+
 .btn {
   cursor: pointer;
 }
